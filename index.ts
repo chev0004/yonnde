@@ -18,7 +18,7 @@ type DictionaryEntry = [
 	string,
 	DictionaryContent
 ];
-const collectionsDir = '/home/chev/Documents/code stuff/yonnde/dictionaries/';
+const collectionsDir = 'dictionaries/';
 
 //IO
 const rl = readline.createInterface({
