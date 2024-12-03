@@ -161,9 +161,9 @@ const main = async (): Promise<void> => {
 							const basicFormResults = termBank.filter(
 								(entry: DictionaryEntry) =>
 									(typeof entry[0] === 'string' &&
-										entry[0] === searchTerm) ||
+										entry[0] === basicForm) ||
 									(typeof entry[1] === 'string' &&
-										entry[1] === searchTerm)
+										entry[1] === basicForm)
 							);
 							//display if found
 							if (basicFormResults.length > 0) {
