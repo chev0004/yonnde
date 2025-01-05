@@ -204,7 +204,7 @@ class DictionaryApp {
 
 	async getBasicForm(searchTerm: string): Promise<string> {
 		const tokens = this.tokenizer.tokenize(searchTerm);
-		return tokens[0].basic_form;
+		return tokens.length === 0 ? searchTerm : tokens[0].basic_form;
 	}
 
 	private displayResults(results: DictionaryEntry[]): void {
