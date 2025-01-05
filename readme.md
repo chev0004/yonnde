@@ -16,9 +16,7 @@ npm install
 2. Set up dictionaries:
     - Create a /dictionaries directory in the project root
     - Inside /dictionaries, add your yomichan dictionaries
-    - Each collection should contain:
-        - index.json (metadata about the dictionary)
-        - Dictionary files should be according to: https://github.com/yomidevs/yomitan/blob/master/docs/making-yomitan-dictionaries.md
+    - Dictionary files should be according to: https://github.com/yomidevs/yomitan/blob/master/docs/making-yomitan-dictionaries.md
 
 ## Usage
 
