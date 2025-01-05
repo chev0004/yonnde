@@ -4,7 +4,7 @@
 	"main": "index.ts",
 	"scripts": {
 		"start": "ts-node index.ts",
-		"build": "tsc",
+		"build": "tsc --outDir dist",
 		"dev": "ts-node-dev --respawn index.ts"
 	},
 	"keywords": [],
