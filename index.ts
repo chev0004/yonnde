@@ -219,11 +219,7 @@ class DictionaryApp {
 			console.log(`Reading: ${entry.reading}`);
 			console.log('Definitions:');
 			entry.definitions.forEach((def) => {
-				if (typeof def === 'object' && def !== null) {
-					this.displayStructuredDefinition(def);
-				} else {
-					console.log(`  - ${def}`);
-				}
+				console.log(`  - ${def}`);
 			});
 			if (entry.tags.length > 0) {
 				console.log(`Tags: ${entry.tags.join(', ')}`);
