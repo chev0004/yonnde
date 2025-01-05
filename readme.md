@@ -18,11 +18,7 @@ npm install
     - Inside /dictionaries, add your yomichan dictionaries
     - Each collection should contain:
         - index.json (metadata about the dictionary)
-        - JSON files containing dictionary entries in the format:
-
-[
-["漢字形", "かな形", "", "", "", "content"]
-]
+        - Dictionary files should be according to: https://github.com/yomidevs/yomitan/blob/master/docs/making-yomitan-dictionaries.md
 
 ## Usage
 
