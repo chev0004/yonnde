@@ -245,29 +245,32 @@ class DictionaryApp {
 
 	async start(): Promise<void> {
 		const processQuery = async () => {
-			this.rl.question(
-				'Enter search term (or "exit" to quit): ',
-				async (searchTerm: string) => {
-					if (
-						['exit', 'quit', 'q'].includes(searchTerm.toLowerCase())
-					) {
-						this.rl.close();
-						return;
-					}
+			let exit = false;
+			while (!exit) {
+				const searchTerm = await new Promise<string>((resolve) => {
+					this.rl.question(
+						'Enter search term (or "exit" to quit): ',
+						(term: string) => resolve(term)
+					);
+				});
 
-					let results = this.searcher.findTerm(searchTerm);
-
-					if (results.length === 0) {
-						const basicForm = await this.getBasicForm(searchTerm);
-						if (basicForm !== searchTerm) {
-							results = this.searcher.findTerm(basicForm);
-						}
-					}
-
-					this.displayResults(results);
-					processQuery();
+				if (['exit', 'quit', 'q'].includes(searchTerm.toLowerCase())) {
+					this.rl.close();
+					exit = true;
+					continue;
 				}
-			);
+
+				let results = this.searcher.findTerm(searchTerm);
+
+				if (results.length === 0) {
+					const basicForm = await this.getBasicForm(searchTerm);
+					if (basicForm !== searchTerm) {
+						results = this.searcher.findTerm(basicForm);
+					}
+				}
+
+				this.displayResults(results);
+			}
 		};
 
 		await processQuery();
